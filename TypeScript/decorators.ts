@@ -1,6 +1,6 @@
 //Decorators are functions for extending business logic or adding metadata
 
-//decorator function
+//decorator function  записват се с @
 
 //hardcoded id
 function MenuItem(value) {
