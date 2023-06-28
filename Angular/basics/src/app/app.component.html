@@ -1,6 +1,6 @@
 <input (keyup)="changeImage($event)" [value]="imgURL" />
 
-<app-post [postImg]="imgURL" />
+<app-post [postImg]="imgURL" (imgSelected)="logImg($event)" />
 
 <h2>Hello, world</h2>
 <p>My name is {{ name }}</p>
