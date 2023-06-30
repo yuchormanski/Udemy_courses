@@ -1,11 +1,42 @@
+<!-- 
+  <ng-template [ngIf]="blueClass">
+    <p>Button is Blue.</p>
+  </ng-template>
+ -->
+<!-- same as above - shorthand syntax -->
+<p *ngIf="blueClass">Button is Blue.</p>
+
+<button
+  (click)="blueClass = !blueClass"
+  [ngClass]="{ blue: blueClass }"
+  [ngStyle]="{ 'font-size.px': fontSize }"
+>
+  Change
+</button>
+<hr />
+
 <input (keyup)="changeImage($event)" [value]="imgURL" />
 
-<app-post [postImg]="imgURL" (imgSelected)="logImg($event)">
-  <p>Some captions</p>
+<app-post
+  *ngFor="let image of images; let i = index"
+  [postImg]="image"
+  (imgSelected)="logImg($event)"
+>
+  <p>{{ i }}Some captions</p>
 </app-post>
 
 <h2>Hello, world</h2>
-<p>My name is {{ name }}</p>
+<p>My name is {{ name | titlecase }}</p>
 <p>My name is {{ name.toUpperCase() }}</p>
 <p>My name is {{ getName() }}</p>
 <p>{{ 23 - 13 }}</p>
+<p>{{ currentDate | date : "d MMMM YYYY " }}</p>
+<p>{{ currentDate | date : "longDate" }}</p>
+<p>{{ cost | currency : "EUR" }}</p>
+<p>{{ temperature }}</p>
+<!-- първата цифра показва броя на целите числа;
+след '.' е обхвата - 'минимален брой цифри - максимален брой'
+в случая няма да се визуализират десетични числа -->
+<p>{{ temperature | number : "1.0-0" }}</p>
+<p>{{ temperature | number : "1.2-4" }}</p>
+<pre>{{ pizza | json }}</pre>
