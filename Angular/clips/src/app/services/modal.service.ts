@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 interface IModal {
   id: string;
   visible: boolean;
@@ -9,13 +10,18 @@ interface IModal {
 })
 export class ModalService {
   private modals: IModal[] = [];
+
   constructor() {}
 
-  register(id: string) {
+  registerModal(id: string) {
     this.modals.push({
       id,
       visible: false,
     });
+  }
+
+  unregisterModal(id: string) {
+    this.modals = this.modals.filter((x) => x.id !== id);
   }
 
   isModalOpen(id: string): boolean {
