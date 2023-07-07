@@ -2,55 +2,51 @@
   <!-- Name -->
   <div class="mb-3">
     <label class="inline-block mb-2">Name</label>
-    <app-input [control]="name"></app-input>
+    <app-input [control]="name" placeholder="Enter Name"></app-input>
   </div>
   <!-- Email -->
   <div class="mb-3">
     <label class="inline-block mb-2">Email</label>
-    <input
-      formControlName="email"
+    <app-input
+      [control]="email"
       type="email"
-      class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
       placeholder="Enter Email"
-    />
+    ></app-input>
   </div>
   <!-- Age -->
   <div class="mb-3">
     <label class="inline-block mb-2">Age</label>
-    <input
-      formControlName="age"
+    <app-input
+      [control]="age"
       type="number"
-      class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-    />
+      placeholder="Enter Age"
+    ></app-input>
   </div>
   <!-- Password -->
   <div class="mb-3">
     <label class="inline-block mb-2">Password</label>
-    <input
-      formControlName="password"
+    <app-input
+      [control]="password"
       type="password"
-      class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-      placeholder="Password"
+      placeholder="Enter Password"
     />
   </div>
   <!-- Confirm Password -->
   <div class="mb-3">
     <label class="inline-block mb-2">Confirm Password</label>
-    <input
-      formControlName="repass"
+    <app-input
+      [control]="repass"
       type="password"
-      class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-      placeholder="Confirm Password"
+      placeholder="Repeat Password"
     />
   </div>
   <!-- Phone Number -->
   <div class="mb-3">
     <label class="inline-block mb-2">Phone Number</label>
-    <input
-      formControlName="phoneNumber"
-      type="text"
-      class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-      placeholder="Enter Phone Number"
+    <app-input
+      [control]="phoneNumber"
+      placeholder="placeholder"
+      format="(000) 000 000 000"
     />
   </div>
   <button
