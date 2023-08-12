@@ -277,3 +277,11 @@ body {
     opacity: 0;
   }
 }
+
+.disabled-element {
+  opacity: 0.5;
+}
+
+.green {
+  background-color: rgba(29, 149, 29, 0.492);
+}

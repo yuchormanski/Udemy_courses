@@ -27,6 +27,7 @@ export class AuthService {
   ) {
     this.usersCollection = db.collection('users');
     this.isAuthenticated$ = auth.user.pipe(map((user) => !!user));
+
     this.router.events
       .pipe(
         filter((e) => e instanceof NavigationEnd),
