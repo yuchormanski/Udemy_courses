@@ -24,15 +24,15 @@ export class ManageComponent implements OnInit {
     private modal: ModalService
   ) {
     this.sort$ = new BehaviorSubject(this.videoOrder);
-    this.sort$.subscribe(console.log);
   }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe((params: Params) => {
       this.videoOrder = params['sort'] === '2' ? params['sort'] : '1';
+      this.sort$.next(this.videoOrder);
     });
 
-    this.clipService.getUserClips().subscribe((docs) => {
+    this.clipService.getUserClips(this.sort$).subscribe((docs) => {
       this.clips = [];
       docs.forEach((doc) => {
         this.clips.push({
