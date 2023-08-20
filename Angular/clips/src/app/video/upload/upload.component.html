@@ -2,6 +2,16 @@
   <div class="rounded relative flex flex-col">
     <div class="font-bold mb-6">Upload Video</div>
 
+    <!-- <ng-template>
+      <span
+        *ngIf="ffmpegService.isReady; else uploadEditorCtr"
+        class="material-icons-outlined text-center text-6xl p-8 animate-spin"
+      >
+        settings
+      </span>
+    </ng-template> -->
+
+    <!-- <ng-template #uploadEditorCtr> -->
     <!-- Upload Dropbox -->
     <ng-container *ngIf="!nextStep; else uploadFormCtr">
       <div
@@ -69,5 +79,6 @@
         </div>
       </form>
     </ng-template>
+    <!-- </ng-template> -->
   </div>
 </section>
