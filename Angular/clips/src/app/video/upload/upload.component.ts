@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 
 import { FfmpegService } from 'src/app/services/ffmpeg.service';
 
+import { combineLatest } from 'rxjs';
+
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -31,6 +33,8 @@ export class UploadComponent implements OnDestroy {
   user: firebase.User | null = null;
   task?: AngularFireUploadTask;
   screenshots: string[] = [];
+  selectedScreenshot: string = '';
+  screenshotTask?: AngularFireUploadTask;
 
   title = new FormControl('', {
     validators: [Validators.required, Validators.minLength(3)],
@@ -72,11 +76,13 @@ export class UploadComponent implements OnDestroy {
 
     this.screenshots = await this.ffmpegService.getScreenshots(this.file);
 
+    this.selectedScreenshot = this.screenshots[0];
+
     this.title.setValue(this.file.name.replace(/\.[^/.]+$/, ''));
     this.nextStep = true;
   }
 
-  uploadFile() {
+  async uploadFile() {
     this.uploadForm.disable();
 
     this.showAlert = true;
@@ -89,13 +95,29 @@ export class UploadComponent implements OnDestroy {
 
     // 'clips' е директорията в Firebase, където ще се съхраняват клиповете. Ако я няма ще я направи автоматично
     const clipPath = `clips/${clipFileName}.mp4`;
+    const screenshotBlob = await this.ffmpegService.blobFromURL(
+      this.selectedScreenshot
+    );
+    const screenshotPath = `screenshots/${clipFileName}.png`;
 
     this.task = this.storage.upload(clipPath, this.file);
 
     const clipRef = this.storage.ref(clipPath);
 
-    this.task.percentageChanges().subscribe((progress) => {
-      this.percentage = (progress as number) / 100;
+    this.screenshotTask = this.storage.upload(screenshotPath, screenshotBlob);
+
+    combineLatest([
+      this.task.percentageChanges(),
+      this.screenshotTask.percentageChanges(),
+    ]).subscribe((progress) => {
+      const [clipProgress, screenshotProgress] = progress;
+
+      if (!clipProgress || !screenshotProgress) {
+        return;
+      }
+
+      const total = clipProgress + screenshotProgress;
+      this.percentage = (total as number) / 200;
     });
 
     this.task
