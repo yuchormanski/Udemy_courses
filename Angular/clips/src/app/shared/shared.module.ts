@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { provideEnvironmentNgxMask, NgxMaskDirective } from 'ngx-mask';
 import { AlertComponent } from './alert/alert.component';
 import { EventBlockerDirective } from './directives/event-blocker.directive';
+import { LoaderComponent } from './loader/loader.component';
 // import { ModalService } from '../services/modal.service';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { EventBlockerDirective } from './directives/event-blocker.directive';
     InputComponent,
     AlertComponent,
     EventBlockerDirective,
+    LoaderComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, NgxMaskDirective],
   exports: [
@@ -27,6 +29,7 @@ import { EventBlockerDirective } from './directives/event-blocker.directive';
     InputComponent,
     AlertComponent,
     EventBlockerDirective,
+    LoaderComponent,
   ],
   providers: [provideEnvironmentNgxMask()],
   // providers: [ModalService],

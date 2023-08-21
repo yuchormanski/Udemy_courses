@@ -15,6 +15,7 @@ import { ClipComponent } from './clip/clip.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
     VideoModule,
     AppRoutingModule,
     AngularFireStorageModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
