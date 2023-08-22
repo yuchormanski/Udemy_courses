@@ -16,6 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { SharedModule } from './shared/shared.module';
+import { ClipsListComponent } from './clips-list/clips-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SharedModule } from './shared/shared.module';
     AboutComponent,
     ClipComponent,
     NotFoundComponent,
+    ClipsListComponent,
   ],
   imports: [
     BrowserModule,
