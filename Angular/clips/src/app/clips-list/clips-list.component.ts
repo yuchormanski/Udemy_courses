@@ -8,7 +8,9 @@ import { IClip } from '../models/clip.model';
   styleUrls: ['./clips-list.component.css'],
 })
 export class ClipsListComponent implements OnInit, OnDestroy {
-  constructor(private clipService: ClipService) {}
+  constructor(public clipService: ClipService) {
+    this.clipService.getClips();
+  }
 
   ngOnInit(): void {
     window.addEventListener('scroll', this.handleScroll);
@@ -21,10 +23,10 @@ export class ClipsListComponent implements OnInit, OnDestroy {
     const { scrollTop, offsetHeight } = document.documentElement;
     const { innerHeight } = window;
 
-    const bottomOfWindow = Math.round(scrollTop) + offsetHeight === innerHeight;
+    const bottomOfWindow = Math.round(scrollTop) + innerHeight === offsetHeight;
 
     if (bottomOfWindow) {
-      console.log('bottom of page');
+      this.clipService.getClips();
     }
   };
 }
