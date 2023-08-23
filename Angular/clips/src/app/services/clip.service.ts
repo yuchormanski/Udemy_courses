@@ -75,7 +75,7 @@ export class ClipService {
     }
 
     this.pendingReq = true;
-    let query = this.clipsCollection.ref.orderBy('timestamp', 'desc').limit(6);
+    let query = this.clipsCollection.ref.orderBy('timestamp', 'desc').limit(3);
 
     const { length } = this.pageClips;
 

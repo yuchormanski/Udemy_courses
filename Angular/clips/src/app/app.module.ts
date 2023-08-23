@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { SharedModule } from './shared/shared.module';
 import { ClipsListComponent } from './clips-list/clips-list.component';
+import { FbTimestampPipe } from './pipes/fb-timestamp.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ClipsListComponent } from './clips-list/clips-list.component';
     ClipComponent,
     NotFoundComponent,
     ClipsListComponent,
+    FbTimestampPipe,
   ],
   imports: [
     BrowserModule,
