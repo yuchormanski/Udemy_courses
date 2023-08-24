@@ -1,4 +1,7 @@
-body {
+@import "~video.js/dist/video-js.css";
+@import "~@videojs/themes/dist/forest/index.css";
+
+/* body {
   background-color: #161d31;
 }
 
@@ -66,7 +69,7 @@ body {
   content: " ";
   display: block;
   border-bottom: 3px solid #fff;
-}
+} */
 
 /* Video.js CSS START */
 .vjs-theme-forest {
@@ -154,8 +157,13 @@ body {
 .video-js .vjs-time-control {
   font-size: 2em;
 }
-/* Video.js CSS END */
 
+.vjs-dimensions {
+  width: 100%;
+  height: 100%;
+}
+/* Video.js CSS END */
+/* 
 .ghost {
   border-radius: 150px 150px 7px 7px;
   -webkit-animation: ghost 1.5s ease-in-out alternate infinite;
@@ -272,4 +280,4 @@ body {
     transform: scale(20) rotate(960deg) translate(-50%, -50%);
     opacity: 0;
   }
-}
+} */
