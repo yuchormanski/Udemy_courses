@@ -25,7 +25,7 @@ import {
   providedIn: 'root',
 })
 // export class ClipService implements Resolve<IClip | null> {
-export class ClipService {
+export class ClipService implements Resolve<IClip | null> {
   public clipsCollection: AngularFirestoreCollection<IClip>;
   pageClips: IClip[] = [];
   pendingReq = false;
@@ -108,8 +108,12 @@ export class ClipService {
     this.pendingReq = false;
   }
 
+  // getClip(id: string) {
+  //   return this.clipsCollection.doc(id).valueChanges();
+  // }
+
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.clipsCollection
+    return this.clipsCollection
       .doc(route.params['id'])
       .get()
       .pipe(
@@ -119,13 +123,8 @@ export class ClipService {
             this.router.navigate(['/']);
             return null;
           }
-
           return data;
         })
       );
   }
-
-  // getClip(id: string) {
-  //   return this.clipsCollection.doc(id).valueChanges();
-  // }
 }
