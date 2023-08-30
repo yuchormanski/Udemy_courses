@@ -43,7 +43,7 @@ function Menu() {
     <main className="menu">
       <h2>Our menu</h2>
       {/* my way */}
-      {numPizzas && (
+      {/* {numPizzas && (
         // Jonas way
         // {numPizzas > 0 && (
         <ul className="pizzas">
@@ -54,6 +54,17 @@ function Menu() {
             // <Pizza pizzaObj={pizza} key={pizza.name} />
           ))}
         </ul>
+      )} */}
+
+      {/* with ternary operator */}
+      {!!numPizzas ? (
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza pizzaObj={pizza} key={uuid()} />
+          ))}
+        </ul>
+      ) : (
+        <p>We're still working on our menu. Please, come back later!</p>
       )}
     </main>
   );
@@ -77,7 +88,7 @@ function Footer() {
   const hour = new Date().getHours();
   const minutes = new Date().getMinutes();
   const openHour = 12;
-  const closeHour = 23;
+  const closeHour = 22;
   // const currentTime = new Date().toLocaleTimeString();
   const currentTime = `${hour}:${minutes}`;
   const isOpen = hour >= openHour && hour <= closeHour;
@@ -86,11 +97,15 @@ function Footer() {
       {/* {isOpen
         ? `${currentTime} - We're currently open!`
         : `${currentTime} - We're closed!`} */}
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
           <p>We're open until {closeHour}:00. Come visit us or order online</p>
           <button className="btn">Order</button>
         </div>
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00
+        </p>
       )}
     </footer>
   );
