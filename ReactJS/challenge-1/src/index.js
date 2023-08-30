@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
 // import "./styles.css";
 
@@ -19,13 +19,7 @@ function App() {
   );
 }
 function Avatar() {
-  return (
-    <img
-      src="https://pixabay.com/get/gb8d2029e72714ba4f4afcf24dd17a497cde45831f84aecafa292bbba475f8f9ff9c990022ec8472fd3872ab02d39146509a5f0b010b6ae9693253ad046df56d5fe51e87500a41b10251b332f7a66764a_640.jpg"
-      alt=""
-      width="442px"
-    />
-  );
+  return <img src="myPhoto2.jpg" alt="Nikolay" className="avatar" />;
 }
 
 function Intro() {
@@ -76,7 +70,10 @@ function SkillList() {
 function Scill(props) {
   return (
     <div>
-      <div className="skill" style={{ backgroundColor: `${props.color}` }}>
+      {/* my way */}
+      {/* <div className="skill" style={{ backgroundColor: `${props.color}` }}>  */}
+      {/* Jonas way */}
+      <div className="skill" style={{ backgroundColor: props.color }}>
         {props.name}
         <img src={props.img} alt="" width="25px" />
       </div>
@@ -84,14 +81,9 @@ function Scill(props) {
   );
 }
 
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-
