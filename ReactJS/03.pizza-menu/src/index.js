@@ -98,11 +98,11 @@ function Pizza({ pizzaObj }) {
 
 function Footer() {
   const hour = new Date().getHours();
-  const minutes = new Date().getMinutes();
+  // const minutes = new Date().getMinutes();
   const openHour = 12;
   const closeHour = 22;
   // const currentTime = new Date().toLocaleTimeString();
-  const currentTime = `${hour}:${minutes}`;
+  // const currentTime = `${hour}:${minutes}`;
   const isOpen = hour >= openHour && hour <= closeHour;
   return (
     <footer className="footer">
