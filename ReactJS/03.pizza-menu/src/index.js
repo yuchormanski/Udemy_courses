@@ -42,27 +42,36 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our menu</h2>
+
       {/* my way */}
       {/* {numPizzas && (
         // Jonas way
         // {numPizzas > 0 && (
-        <ul className="pizzas">
+          <ul className="pizzas">
           {pizzaData.map((pizza) => (
             // my way
             <Pizza pizzaObj={pizza} key={uuid()} />
             // Jonas way
             // <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
-      )} */}
+            ))}
+            </ul>
+          )} */}
 
       {/* with ternary operator */}
       {!!numPizzas ? (
-        <ul className="pizzas">
-          {pizzaData.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={uuid()} />
-          ))}
-        </ul>
+        <React.Fragment>
+          {/* or just <>*/}
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus
+            quod ea sapiente dolorem eos nulla quidem aliquam consectetur esse
+            voluptate.
+          </p>
+          <ul className="pizzas">
+            {pizzaData.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={uuid()} />
+            ))}
+          </ul>
+        </React.Fragment>
       ) : (
         <p>We're still working on our menu. Please, come back later!</p>
       )}
@@ -71,17 +80,17 @@ function Menu() {
 }
 
 function Pizza({ pizzaObj }) {
-  console.log(pizzaObj);
+  // console.log(pizzaObj);
 
-  if (pizzaObj.soldOut) return null;
+  // if (pizzaObj.soldOut) return null;
 
   return (
-    <li className="pizza">
+    <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : null}`}>
       <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
         <h3>{pizzaObj.name}</h3>
         <p>{pizzaObj.ingredients}</p>
-        <span>{pizzaObj.price}</span>
+        <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
       </div>
     </li>
   );
