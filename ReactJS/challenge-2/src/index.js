@@ -47,13 +47,11 @@ function SkillList() {
 }
 
 function Skill({ skill, color, level }) {
-  const currentLevel = getLevel(level);
-
   return (
     <div>
       <div className="skill" style={{ backgroundColor: color }}>
         <span>{skill}</span>
-        <span>{currentLevel}</span>
+        <span>{getLevel(level)}</span>
         {/* <span>
           {level === "beginner" && "😒"}
           {level === "intermediate" && "🤞"}
