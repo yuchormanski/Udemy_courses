@@ -1,3 +1,6 @@
+
+![pizza-menu](https://github.com/yuchormanski/Udemy_courses/assets/693307/66b4db3f-9c1f-4b71-96a9-e657dd26d397)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
