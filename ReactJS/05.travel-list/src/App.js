@@ -7,8 +7,6 @@ const initialItems = [
 ];
 
 export default function App() {
-  const [items, setItems] = useState([]);
-
   return (
     <div className="app">
       <Logo />
@@ -22,7 +20,8 @@ export default function App() {
 function Logo() {
   return <h1>🌴 Far Away 💼</h1>;
 }
-function Form() {
+
+function Form({}) {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
 
