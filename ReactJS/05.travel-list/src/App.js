@@ -9,7 +9,7 @@ const initialItems = [
 export default function App() {
   const [items, setItems] = useState([]);
   function handleAddItems(item) {
-    setItems((item) => [...items, item]);
+    setItems((items) => [...items, item]);
   }
 
   return (
