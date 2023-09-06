@@ -6,11 +6,11 @@ const messages = [
   "Invest your new income 🤑",
 ];
 
-export default function App() {
+function App() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
-  // const activeBtn = { backgroundColor: "#7950f2", color: "#fff" };
-  // const inActiveBtn = { backgroundColor: "#ededed", color: "#aaa" };
+  const activeBtn = { backgroundColor: "#7950f2", color: "#fff" };
+  const inActiveBtn = { backgroundColor: "#ededed", color: "#aaa" };
 
   function handlePrevious() {
     if (step > 1) setStep((s) => s - 1);
@@ -39,13 +39,20 @@ export default function App() {
           </p>
 
           <div className="buttons">
-            <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
-              <span>👈</span> Previous
-            </Button>
-
-            <Button bgColor="#7950f2" textColor="#fff" onClick={handleNext}>
-              Next <span>👉</span>
-            </Button>
+            <button
+              style={step === 1 ? inActiveBtn : activeBtn}
+              onClick={handlePrevious}
+              // disabled={step === 1 ? true : false}
+            >
+              Previous
+            </button>
+            <button
+              style={step === 3 ? inActiveBtn : activeBtn}
+              onClick={handleNext}
+              // disabled={step === 3 ? true : false}
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
@@ -53,13 +60,4 @@ export default function App() {
   );
 }
 
-function Button({ bgColor, textColor, onClick, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  );
-}
+export default App;
