@@ -1,13 +1,6 @@
 import { useState } from "react";
 
-// const initialItems = [
-//   { id: 1, description: "Passports", quantity: 2, packed: false },
-//   { id: 2, description: "Socks", quantity: 12, packed: false },
-//   { id: 3, description: "Charger", quantity: 1, packed: true },
-// ];
-
 export default function App() {
-  // const [items, setItems] = useState(initialItems);
   const [items, setItems] = useState([]);
 
   function handleAddItems(item) {
@@ -26,6 +19,14 @@ export default function App() {
     );
   }
 
+  function handleClearItems() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+
+    if (confirmed) setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -34,6 +35,7 @@ export default function App() {
         items={items}
         onDeleteItem={handelDeleteItem}
         onToggleItem={handleToggleItem}
+        onClearItem={handleClearItems}
       />
       <Stats items={items} />
     </div>
@@ -92,11 +94,28 @@ function Form({ onAddItems }) {
   );
 }
 
-function PackingList({ items, onDeleteItem, onToggleItem }) {
+function PackingList({ items, onDeleteItem, onToggleItem, onClearItem }) {
+  const [sortBy, setSortBy] = useState("input");
+  let sortedItems;
+
+  if (sortBy === "input") {
+    sortedItems = items;
+  }
+  if (sortBy === "description") {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => a.description.localeCompare(b.description));
+  }
+  if (sortBy === "packed") {
+    sortedItems = items
+      .slice()
+      .sort((a, b) => Number(a.packed) - Number(b.packed));
+  }
+
   return (
     <div className="list">
       <ul>
-        {items.map((item) => (
+        {sortedItems.map((item) => (
           <Item
             item={item}
             key={item.id}
@@ -105,6 +124,17 @@ function PackingList({ items, onDeleteItem, onToggleItem }) {
           />
         ))}
       </ul>
+
+      {items.length ? (
+        <div className="actions">
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <option value="input">sort by input order</option>
+            <option value="description">sort by description</option>
+            <option value="packed">sort by packed status</option>
+          </select>
+          <button onClick={onClearItem}>Clear list</button>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -141,7 +171,7 @@ function Stats({ items }) {
   return (
     <footer className="stats">
       <em>
-        {percentage == 100
+        {percentage === 100
           ? "You got everything! Ready to go ✈"
           : `💼 You have ${count} items on your list, and you already packed ${packed} 
         (${percentage}%)`}
