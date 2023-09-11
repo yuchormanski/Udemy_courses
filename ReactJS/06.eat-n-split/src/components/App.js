@@ -20,7 +20,20 @@ export default function App() {
   }
 
   function handleSelection(friend) {
-    setSelectedFriend(friend);
+    setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
+    setAddFriend(false);
+  }
+
+  function handleSplitBill(value) {
+    console.log(value);
+    setFriends(
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      )
+    );
+    setSelectedFriend(null);
   }
 
   return (
@@ -36,7 +49,9 @@ export default function App() {
           {addFriend ? "Close" : "Add friend"}
         </Button>
       </div>
-      {!!selectedFriend && <FormSplitBill friend={selectedFriend} />}
+      {!!selectedFriend && (
+        <FormSplitBill friend={selectedFriend} onSplit={handleSplitBill} />
+      )}
     </div>
   );
 }
