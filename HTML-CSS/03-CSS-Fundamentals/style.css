@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+button {
+  all: unset;
+}
+
+article {
+  border: 3px solid black;
+}
+h2 {
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  background-color: rgb(220, 216, 216);
+}
+
+h2,
+h3,
+.shipping,
+button {
+  text-transform: uppercase;
+}
+
+.shipping {
+  color: gray;
+  font-weight: bold;
+}
+
+p > strong {
+  font-size: 24px;
+}
+
+a,
+a:visited,
+a:active,
+a:focus {
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: square;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
