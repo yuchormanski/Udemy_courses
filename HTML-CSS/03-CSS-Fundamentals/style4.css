@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+}
+
+.container {
+  width: 825px;
+  margin: 50px auto;
+}
+
+article {
+  border: 3px solid black;
+}
+
+.product-header {
+  padding: 15px 0;
+  text-align: center;
+  line-height: 30px;
+  background-color: #f7f7f7;
+}
+
+.product-header,
+h3,
+.shipping,
+button {
+  text-transform: uppercase;
+}
+
+.product-img {
+  width: 33.33%;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.shipping {
+  color: gray;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 15px;
+}
+
+.info-link,
+.info-link:visited,
+.info-link:active,
+.info-link:focus {
+  color: black;
+}
+.info-link:hover {
+  text-decoration: none;
+}
+
+.product-details {
+  margin: 30px 0 15px;
+}
+
+ul {
+  list-style-type: square;
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  padding: 15px 0;
+  cursor: pointer;
+  border-top: 4px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
