@@ -185,3 +185,12 @@ h1::first-letter {
   font-style: normal;
   margin-right: 5px;
 }
+
+.author-img {
+  float: left;
+}
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
