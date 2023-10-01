@@ -40,8 +40,7 @@
         width: 800px;
         margin: 100px auto;
         border-radius: 8px;
-        padding: 32px;
-        padding-left: 86px;
+        padding: 32px 48px 32px 86px;
         position: relative;
         display: flex;
         align-items: center;
@@ -50,7 +49,7 @@
       img {
         height: 200px;
         border-radius: 8px;
-        transform: scale(1.5);
+        transform: scale(1.55);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
       }
 
@@ -73,22 +72,52 @@
 
       .btn {
         background-color: #fff;
-        display: block;
         width: 40px;
         height: 40px;
         position: absolute;
         font-size: 24px;
+        line-height: 0.75;
         color: #343a40;
         text-align: center;
-        border-radius: 100px;
+        border-radius: 50%;
+        /* border: 1px solid #087f5b; */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         top: 50%;
-        border: 1px solid #087f5b;
+        cursor: pointer;
+        /*
+        display: flex;
+        align-items: center;
+        justify-content: center; */
       }
       .left {
-        left: -20px;
+        left: 0px;
+        transform: translate(-50%, -50%);
       }
       .right {
-        right: -20px;
+        right: 0px;
+        transform: translate(50%, -50%);
+      }
+
+      .dots {
+        display: flex;
+        gap: 12px;
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translate(-50%, 32px);
+      }
+
+      .dot {
+        height: 12px;
+        width: 12px;
+        background-color: #fff;
+        border: 2px solid #087f5b;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .dot--fill {
+        background-color: #087f5b;
       }
     </style>
   </head>
@@ -100,7 +129,7 @@
           "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit
           porro tenetur voluptas commodi fuga excepturi molestias pariatur,
           asperiores quis obcaecati illo veniam harum ullam! Dolores nam
-          perferendis voluptates assumenda eos!"
+          perferendis!"
         </p>
         <p class="testimonial-author">Maria de Almeida</p>
         <p class="testimonial-job">Senior Product Manager at EDP Comercial</p>
@@ -112,6 +141,12 @@
       <button class="btn right">
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </button>
+      <div class="dots">
+        <button class="dot dot--fill">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+        <button class="dot">&nbsp;</button>
+      </div>
     </div>
 
     <script
