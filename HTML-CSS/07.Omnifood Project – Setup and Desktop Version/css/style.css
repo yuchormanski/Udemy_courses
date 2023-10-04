@@ -1,7 +1,10 @@
 @import url(general.css);
-/* ************************ */ /* HEADER */
+/* ************************ */
+/* HEADER */
 /* ************************ */
 .header {
+  /* width: 100%;
+  position: fixed; */
   background-color: #fdf2e9;
   display: flex;
   align-items: center;
@@ -10,6 +13,7 @@
   height: 9.6rem;
   padding: 0 4.8rem;
 }
+
 .logo {
   height: 2.2rem;
 }
