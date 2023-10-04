@@ -5,9 +5,14 @@
 
     - FONT WEIGHTS:
         Default: 400
+        Medium: 500
+        Semi-bold: 600
+        Bold: 700
 
     - LINE HEIGHTS:
         Default: 1
+        Small: 1.05,
+        Paragraph default: 1.6
 # COLORS
 
     - PRIMARY: #e67e22
@@ -19,6 +24,7 @@
 # SHADOWS: 
 
 # BORDER RADIUS:
+Default: 9px
 
 # WHITESPACE: 
 
@@ -45,6 +51,25 @@ body {
 /* ************************ */
 /* GENERAL REUSABLE COMPONENTS */
 /* ************************ */
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 700;
@@ -92,6 +117,7 @@ body {
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
+
 /* ************************ */
 /* HEADER */
 /* ************************ */
@@ -113,12 +139,14 @@ body {
 /* ************************ */
 .main-nav-list {
   display: flex;
+  align-items: center;
   gap: 3.2rem;
   list-style: none;
 }
 
 .main-nav-link:link,
 .main-nav-link:visited {
+  display: block;
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -129,6 +157,18 @@ body {
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #e67e22;
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+}
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
 }
 
 /* ************************ */
@@ -189,4 +229,18 @@ body {
 
 .delivered-number {
   color: #e67e22;
+}
+
+/* ************************ */
+/* HOW IT WORKS */
+/* ************************ */
+.section-how {
+  padding: 9.6rem 0;
+  background-color: orangered;
+}
+
+.section-how div div {
+  background-color: green;
+  padding: 100px;
+  color: white;
 }
