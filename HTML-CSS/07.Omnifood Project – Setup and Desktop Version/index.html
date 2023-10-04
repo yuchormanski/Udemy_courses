@@ -3,36 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Omnifood</title>
   </head>
   <body>
-    <section class="section-hero">
-      <div class="hero">
-        <div class="hero-text-box">
-          <h1 class="heading-primary">
-            A healthy meal delivered to your door, every single day
-          </h1>
+    <header class="header">
+      <img src="img/omnifood-logo.png" class="logo" alt="Omnifood logo" />
 
-          <p class="hero-desription">
-            The smart 365-days-per-year food subscription that will make you eat
-            healthy again. Tailored to your personal tastes and nutritional
-            needs. We have delivered 250,000+ meals last year!
-          </p>
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li><a href="#" class="main-nav-link">Section 1</a></li>
+          <li><a href="#" class="main-nav-link">Section 2</a></li>
+          <li><a href="#" class="main-nav-link">Section 3</a></li>
+          <li><a href="#" class="main-nav-link">Section 4</a></li>
+          <li><a href="#" class="main-nav-link">Section 5</a></li>
+        </ul>
+      </nav>
+    </header>
 
-          <a href="#" class="btn btn--full margin-right-sm"
-            >Start eating well</a
-          >
-          <a href="#" class="btn btn--outline">Learn more &darr;</a>
+    <main>
+      <section class="section-hero">
+        <div class="hero">
+          <div class="hero-text-box">
+            <h1 class="heading-primary">
+              A healthy meal delivered to your door, every single day
+            </h1>
+
+            <p class="hero-desription">
+              The smart 365-days-per-year food subscription that will make you
+              eat healthy again. Tailored to your personal tastes and
+              nutritional needs.
+            </p>
+
+            <a href="#" class="btn btn--full margin-right-sm"
+              >Start eating well</a
+            >
+            <a href="#" class="btn btn--outline">Learn more &darr;</a>
+
+            <div class="delivered-meals">
+              <div class="delivered-imgs">
+                <img src="img/customers/customer-1.jpg" alt="Customer face" />
+                <img src="img/customers/customer-2.jpg" alt="Customer face" />
+                <img src="img/customers/customer-4.jpg" alt="Customer face" />
+                <img src="img/customers/customer-3.jpg" alt="Customer face" />
+                <img src="img/customers/customer-5.jpg" alt="Customer face" />
+                <img src="img/customers/customer-6.jpg" alt="Customer face" />
+              </div>
+
+              <p class="delivered-text">
+                <strong class="delivered-number">250,000+</strong> meals
+                delivered last year!
+              </p>
+            </div>
+          </div>
+          <div class="hero-img-box">
+            <img
+              src="./img/hero.png"
+              class="hero-img"
+              alt="Omnifood main image"
+            />
+          </div>
         </div>
-        <div class="hero-img-box">
-          <img
-            src="./img/hero.png"
-            class="hero-img"
-            alt="Omnifood main image"
-          />
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 </html>
