@@ -12,6 +12,10 @@ const starContainerStyle = {
   display: "flex",
 };
 
+// usage
+// const [movieRating, setMovieRating] = useState(0);
+// <StarsRating color="#FFA81E" maxRating={4} onSetRating={setMovieRating} and-so-on/>;
+
 StarsRating.propTypes = {
   // maxRating: PropTypes.number.isRequired,
   maxRating: PropTypes.number,
