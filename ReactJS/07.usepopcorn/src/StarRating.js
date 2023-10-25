@@ -19,7 +19,7 @@ const starContainerStyle = {
 StarsRating.propTypes = {
   // maxRating: PropTypes.number.isRequired,
   maxRating: PropTypes.number,
-  defaultRating: PropTypes.number,
+  // defaultRating: PropTypes.number,
   color: PropTypes.string,
   className: PropTypes.string,
   messages: PropTypes.array,
@@ -37,12 +37,13 @@ export default function StarsRating({
   defaultRating = 0,
   onSetRating,
 }) {
-  const [rating, setRating] = useState(defaultRating);
+  const [rating, setRating] = useState(0);
   const [tempRating, setTempRating] = useState(0);
+  const [movieRating, setMovieRating] = useState(0);
 
   function handleRating(rating) {
     setRating(rating);
-    onSetRating(rating);
+    setMovieRating(rating);
   }
 
   const textStyle = {
