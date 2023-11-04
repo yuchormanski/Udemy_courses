@@ -1,0 +1,11 @@
+npm create vite@latest
+or 
+npm create vite@4
+npm i
+npm run dev
+
+- in new terminal - 
+npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
+
+- React Router - 
+npm install react-router-dom
