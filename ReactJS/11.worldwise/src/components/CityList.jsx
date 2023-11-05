@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import CityItem from "./CityItem.jsx";
 import styles from "./CityList.module.css";
 import Message from "./Message.jsx";

@@ -1,0 +1,44 @@
+CityList.jsx
+----------------
+
+
+import PropTypes from 'prop-types';
+...
+CityList.propTypes = {
+  cities: PropTypes.array,
+  isLoading: PropTypes.bool,
+};
+
+
+CityItem.jsx
+---------------
+
+import PropTypes from 'prop-types';
+...
+CityItem.propTypes = {
+  city: PropTypes.shape({
+    cityName: PropTypes.string,
+    country: PropTypes.string,
+    emoji: PropTypes.string,
+    date: PropTypes.string,
+    notes: PropTypes.string,
+    position: PropTypes.shape({
+      lat: PropTypes.number,
+      lng: PropTypes.number,
+    }),
+    id: PropTypes.number,
+  }),
+};
+...
+
+
+
+or add rule line in .eslintrc.cjs
+
+"rules": {
+      "react/prop-types": "off",
+      "no-unused-vars": "off",
+}
+
+"removing quotes after className
+VSCode added JSX Attribute Completions in the November, 2021 update. This can be disabled by changing "javascript.preferences.jsxAttributeCompletionStyle" and "typescript.preferences.jsxAttributeCompletionStyle" to "none" in the settings.
