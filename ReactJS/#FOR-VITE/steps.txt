@@ -6,7 +6,56 @@ npm run dev
 
 - in new terminal - 
 npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
-copy files from folder
 
 - React Router - 
 npm install react-router-dom
+
+- json-server
+npm i json-server
+    in package.json
+    scripts -> "server": "json-server --watch data/cities.json --port 9000 --delay 500"
+
+
+    
+  const EMAIL_REGEX =
+    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  const PASS_REGEX = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/;
+
+
+
+       const user = {
+      email,
+      pwd,
+    };
+
+    const payload = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    };
+
+    fetch(`${BASE_URL}${API_ROUTE}`, payload)
+      .then((response) => response.json())
+      .then((data) => {}) //Handling response
+      .catch((err) => {}); //Handling error
+
+await register(email, password);
+await login(email, password);
+logout();
+
+const data = await get("/data/fruits");
+
+
+const userData = getUserData();
+
+
+register = {
+    "fullName": "Test User",
+    "email": "test@test.bg",
+    "password": "Pass-1",
+    "repass": "Pass-1",
+    "iban": "BG18RZBB91550123456789",
+    "balance": 123.46
+}
