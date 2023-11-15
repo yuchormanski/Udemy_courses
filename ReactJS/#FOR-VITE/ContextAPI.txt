@@ -1,0 +1,32 @@
+- SIMPLE APROACH -
+
+const ContextName - createContext()      (from react)
+
+прави се пради дефинирането на функцията (компонента) 
+
+веднага след return на првайдер компонента:
+(по същият начин като подаването на пропс на компонентите)
+
+
+<ContextName.Provider value={{
+		valueName: prop,
+		valueName: prop
+	}}>
+</ContextName.Provider>
+
+
+в компонента , който се нуждае, веднага след дефинирането на функцията
+const {neededPart} = useContext(ContextName)    (from react)
+
+
+- REFACTORING -
+Advanced patern : A custom provider and hook
+
+
+1. create new file in App.jsx dir - ContextName.js
+	import {createContext} from "react"
+
+	const ContextName - createContext()  
+	function ContexNameProvider(){
+
+	}
