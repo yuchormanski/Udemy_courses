@@ -2,6 +2,7 @@ https://www.npmjs.com/package/json-server
 
 
 https://github.com/typicode/json-server
+https://github.com/jeremyben/json-server-auth
 
 https://stackoverflow.com/questions/36836424/cant-watch-multiple-files-with-json-server
 https://monsterlessons-academy.com/posts/create-a-rest-api-with-json-server
