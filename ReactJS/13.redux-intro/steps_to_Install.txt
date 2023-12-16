@@ -1,0 +1,4 @@
+1. install application
+2. instal redux -> npm i redux
+3.instal dependencies -> npm i react-redux
+4. install middleware - npm i redux-thunk

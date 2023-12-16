@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deposit, payLoan, requestLoan, withdraw } from "./accountSlice.js";
+import Loader from "../../components/Loader.jsx";
 
 function AccountOperations() {
   const [depositAmount, setDepositAmount] = useState("");
@@ -10,14 +11,17 @@ function AccountOperations() {
   const [currency, setCurrency] = useState("USD");
 
   const dispatch = useDispatch();
-  const { loan: currentLoan, loanPurpose: currentLoanPurpose } = useSelector(
-    (store) => store.account
-  );
+  const {
+    loan: currentLoan,
+    loanPurpose: currentLoanPurpose,
+    isLoading,
+  } = useSelector((store) => store.account);
 
   function handleDeposit() {
     if (!depositAmount) return;
-    dispatch(deposit(depositAmount));
+    dispatch(deposit(depositAmount, currency));
     setDepositAmount("");
+    setCurrency("");
   }
 
   function handleWithdrawal() {
@@ -40,6 +44,7 @@ function AccountOperations() {
 
   return (
     <div>
+      {isLoading && <Loader />}
       <h2>Your account operations</h2>
       <div className="inputs">
         <div>
