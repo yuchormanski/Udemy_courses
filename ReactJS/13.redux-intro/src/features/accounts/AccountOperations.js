@@ -44,7 +44,7 @@ function AccountOperations() {
 
   return (
     <div>
-      {isLoading && <Loader />}
+      {/* {isLoading && <Loader />} */}
       <h2>Your account operations</h2>
       <div className="inputs">
         <div>
