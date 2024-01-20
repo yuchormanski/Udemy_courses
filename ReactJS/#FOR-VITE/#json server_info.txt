@@ -13,3 +13,4 @@ https://monsterlessons-academy.com/posts/create-a-rest-api-with-json-server
   },
   
   json-server --watch db.json -m ./node_modules/json-server-auth
+  "server": "json-server --watch data/api.json -m ./node_modules/json-server-auth --port 9000 --delay 500"
