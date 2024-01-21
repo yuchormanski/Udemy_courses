@@ -2,3 +2,4 @@
 2. instal redux -> npm i redux
 3.instal dependencies -> npm i react-redux
 4. install middleware - npm i redux-thunk
+5. install extention (Chrome) - https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?pli=1
