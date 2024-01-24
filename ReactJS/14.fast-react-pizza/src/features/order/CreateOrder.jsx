@@ -51,17 +51,19 @@ function CreateOrder() {
   // }
 
   return (
-    <div>
-      <h2>Ready to order? Let&apos;s go!</h2>
+    <div className={'px-4 py-6'}>
+      <h2 className={'mb-8 text-xl font-semibold'}>
+        Ready to order? Let&apos;s go!
+      </h2>
 
       <Form method="POST">
-        <div>
-          <label>First Name</label>
+        <div className={'mb-5 flex flex-col gap-2 sm:flex-row sm:items-center'}>
+          <label className={'sm:basis-40'}>First Name</label>
           <input className="input" type="text" name="customer" required />
         </div>
 
-        <div>
-          <label>Phone number</label>
+        <div className={'mb-5 flex flex-col gap-2 sm:flex-row sm:items-center'}>
+          <label className={'sm:basis-40'}>Phone number</label>
           <div>
             <input
               className="input"
@@ -76,8 +78,8 @@ function CreateOrder() {
           {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
-        <div>
-          <label>Address</label>
+        <div className={'mb-5 flex flex-col gap-2 sm:flex-row sm:items-center'}>
+          <label className={'sm:basis-40'}>Address</label>
           <div>
             <input className="input" type="text" name="address" required />
           </div>
@@ -103,7 +105,7 @@ function CreateOrder() {
             rounded-full bg-yellow-400 px-4 py-3 font-semibold uppercase
             tracking-wide text-stone-800 transition-colors duration-300 hover:bg-yellow-300 focus:bg-yellow-300 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-offset-2 disabled:cursor-not-allowed"
           ></button> */}
-          <Button disabled={isSubmitting}>
+          <Button disabled={isSubmitting} type="primary">
             {isSubmitting ? 'Placing order ...' : 'Order now'}
           </Button>
         </div>
