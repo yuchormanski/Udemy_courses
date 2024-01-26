@@ -9,9 +9,10 @@ import {
 } from '../../utils/helpers';
 import OrderItem from './OrderItem.jsx';
 import { useSelector } from 'react-redux';
+import { getUsername } from '../user/userSlice.js';
 
 function Order() {
-  const username = useSelector((state) => state.user.username);
+  const username = useSelector(getUsername);
 
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const order = useLoaderData();
