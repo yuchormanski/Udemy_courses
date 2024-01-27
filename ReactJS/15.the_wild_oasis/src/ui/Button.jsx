@@ -47,3 +47,19 @@ const variations = {
     }
   `,
 };
+
+const Button = styled.button`
+  border: none;
+  border-radius: var(--color-border-radius-sm);
+  box-shadow: var(--shadow-sm);
+
+  ${(props) => sizes[props.size]}
+  ${(props) => variations[props.variations]}
+`;
+
+Button.defaultProps = {
+  variations: "primary",
+  size: "medium",
+};
+
+export default Button;
