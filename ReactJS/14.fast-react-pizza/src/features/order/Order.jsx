@@ -54,8 +54,8 @@ function Order() {
       </div>
 
       <ul className={'font-stone-200 divide-y border-b border-t'}>
-        {cart.map((order) => (
-          <OrderItem key={order.id} item={order} />
+        {cart.map((item) => (
+          <OrderItem key={item.id} item={item} />
         ))}
       </ul>
 
