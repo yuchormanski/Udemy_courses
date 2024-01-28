@@ -11,42 +11,6 @@ import { createCabin } from "../../services/apiCabins.js";
 import toast from "react-hot-toast";
 import FormRow from "../../ui/FormRow.jsx";
 
-// const FormRow = styled.div`
-//   display: grid;
-//   align-items: center;
-//   grid-template-columns: 24rem 1fr 1.2fr;
-//   gap: 2.4rem;
-
-//   padding: 1.2rem 0;
-
-//   &:first-child {
-//     padding-top: 0;
-//   }
-
-//   &:last-child {
-//     padding-bottom: 0;
-//   }
-
-//   &:not(:last-child) {
-//     border-bottom: 1px solid var(--color-grey-100);
-//   }
-
-//   &:has(button) {
-//     display: flex;
-//     justify-content: flex-end;
-//     gap: 1.2rem;
-//   }
-// `;
-
-// const Label = styled.label`
-//   font-weight: 500;
-// `;
-
-// const Error = styled.span`
-//   font-size: 1.4rem;
-//   color: var(--color-red-700);
-// `;
-
 function CreateCabinForm() {
   const queryClient = useQueryClient();
 
@@ -72,11 +36,11 @@ function CreateCabinForm() {
   });
 
   function onFormSubmit(data) {
-    mutate(data);
+    mutate({ ...data, image: data.image[0] });
   }
 
   function onErrorSubmit(errors) {
-    // console.log(errors);
+    console.log(errors);
     Object.keys(errors).forEach((error) => toast.error(errors[error].message));
   }
 
@@ -128,7 +92,7 @@ function CreateCabinForm() {
           {...register("discount", {
             required: "The field is required",
             validate: (value) =>
-              value <= getValues().regularPrice ||
+              Number(value) <= Number(getValues().regularPrice) ||
               "The discount should be lower than the regular price",
           })}
         />
@@ -150,7 +114,15 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow label={"Cabin photo"}>
-        <FileInput id="image" accept="image/*" disabled={isCreating} />
+        <FileInput
+          type="file"
+          id="image"
+          accept="image/*"
+          disabled={isCreating}
+          {...register("image", {
+            required: "The image is required",
+          })}
+        />
       </FormRow>
 
       <FormRow>
